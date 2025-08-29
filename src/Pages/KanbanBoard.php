@@ -2,6 +2,7 @@
 
 namespace Mokhosh\FilamentKanban\Pages;
 
+use BackedEnum;
 use Filament\Pages\Page;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
@@ -14,7 +15,7 @@ class KanbanBoard extends Page
     use HasEditRecordModal;
     use HasStatusChange;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static BackedEnum | string | null $navigationIcon = 'heroicon-o-document-text';
 
     protected static string $view = 'filament-kanban::kanban-board';
 
