@@ -69,7 +69,7 @@ class FilamentKanbanServiceProvider extends PackageServiceProvider
         return [
             // AlpineComponent::make('filament-kanban', __DIR__ . '/../resources/dist/components/filament-kanban.js'),
             // Js::make('filament-kanban-scripts', __DIR__ . '/../resources/dist/filament-kanban.js'),
-        //    Css::make('filament-kanban-styles', __DIR__ . '/../resources/dist/filament-kanban.css'),
+            Css::make('filament-kanban-styles', __DIR__ . '/../resources/dist/filament-kanban.css'),
         ];
     }
 
