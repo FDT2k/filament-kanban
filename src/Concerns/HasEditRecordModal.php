@@ -2,8 +2,8 @@
 
 namespace Mokhosh\FilamentKanban\Concerns;
 
+use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 
 trait HasEditRecordModal
 {
@@ -53,10 +53,10 @@ trait HasEditRecordModal
         $this->dispatch('close-modal', id: 'kanban--edit-record-modal');
     }
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
-            ->schema($this->getEditModalFormSchema($this->editModalRecordId))
+        return $schema
+            ->components($this->getEditModalFormSchema($this->editModalRecordId))
             ->statePath('editModalFormState')
             ->model($this->editModalRecordId ? static::$model::find($this->editModalRecordId) : static::$model);
     }
